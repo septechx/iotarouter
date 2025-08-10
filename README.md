@@ -1,6 +1,10 @@
 # iotarouter
 
-Tiny router for React.
+Tiny (19kB) file-based router for React.
+
+## Requirements
+
+A bundler with support for the `import.meta.glob` API. E.g. Vite.
 
 ## Usage
 
@@ -15,6 +19,6 @@ createRoot(document.getElementById("root")!).render(
     <RouterProvider>
       <Route fallback={<div>404</div>} />
     </RouterProvider>
-  </StrictMode>,
+  </StrictMode>
 );
 ```
