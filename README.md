@@ -1,6 +1,6 @@
 # iotarouter
 
-Tiny (19kB) file-based router for React.
+Tiny (3kB) file-based router for React.
 
 ## Requirements
 
@@ -22,3 +22,5 @@ createRoot(document.getElementById("root")!).render(
   </StrictMode>
 );
 ```
+
+Place your routes in `src/<route>.tsx` files. The `/` path is mapped to `src/page.tsx`.
