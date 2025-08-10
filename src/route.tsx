@@ -8,7 +8,7 @@ export function Route({ fallback }: { fallback: ReactNode }) {
   const cleaned = path.replace(/^\/+/, "") || "page";
   const file = `/src/${cleaned}.tsx`;
 
-  const module = pages[file] as { default?: React.ComponentType } | undefined;
+  const module = pages[file];
 
   if (!module?.default) {
     return fallback;
