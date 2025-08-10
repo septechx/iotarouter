@@ -1,6 +1,6 @@
 {
   "name": "iotarouter",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Tiny router for React.",
   "main": "dist/main.js",
   "module": "dist/main.js",
