@@ -1,25 +1,19 @@
-import fs from "fs";
-import { lazy, Suspense, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { usePath } from "./router";
 
-function loadPage(path: string) {
-  if (fs.existsSync(`./${path}.tsx`)) {
-    return lazy(() => import(`./${path}.tsx`));
-  }
-  if (fs.existsSync(`./${path}/page.tsx`)) {
-    return lazy(() => import(`./${path}/page.tsx`));
-  }
-  // @ts-ignore-next-line
-  return lazy(() => import(`./404.tsx`));
-}
+const pages = import.meta.glob("/src/**/*.tsx", { eager: true });
 
 export function Route({ fallback }: { fallback: ReactNode }) {
   const path = usePath();
-  const Page = loadPage(path);
+  const cleaned = path.replace(/^\/+/, "") || "page";
+  const file = `/src/${cleaned}.tsx`;
 
-  return (
-    <Suspense fallback={fallback}>
-      <Page />
-    </Suspense>
-  );
+  const module = pages[file] as { default?: React.ComponentType } | undefined;
+
+  if (!module?.default) {
+    return fallback;
+  }
+
+  const Page = module.default;
+  return <Page />;
 }

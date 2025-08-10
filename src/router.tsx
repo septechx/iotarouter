@@ -19,7 +19,7 @@ const RouterContext = createContext<{
 export function RouterProvider({ children }: { children: ReactNode }) {
   const [path, setPath] = useState(window.location.pathname);
   const [searchParams, setSearchParams] = useState(
-    new URLSearchParams(window.location.search),
+    new URLSearchParams(window.location.search)
   );
 
   useEffect(() => {
