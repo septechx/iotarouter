@@ -1,6 +1,6 @@
 {
   "name": "iotarouter",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Tiny router for React.",
   "main": "dist/main.js",
   "module": "dist/main.js",
@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "build": "rm -rf dist && tsc -p tsconfig.json"
   },
   "keywords": [
     "react",
