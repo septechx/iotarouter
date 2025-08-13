@@ -1,7 +1,9 @@
 import { type ReactNode } from "react";
 import { usePath } from "./router";
 
-const pages = import.meta.glob("/src/**/*.tsx", { eager: true });
+const pages = import.meta.glob(["/src/**/*.tsx", "/src/**/*.jsx"], {
+  eager: true,
+});
 
 const routeMap: Record<string, { default?: React.ComponentType }> = {};
 

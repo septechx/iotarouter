@@ -12,7 +12,7 @@ type GlobResult = Record<string, { default?: React.ComponentType } | undefined>;
 declare global {
   interface ImportMeta {
     glob<T extends { eager?: boolean } = { eager?: boolean }>(
-      pattern: string,
+      pattern: string[],
       options: T
     ): T extends { eager: true } ? GlobResult : Promise<GlobResult>;
   }

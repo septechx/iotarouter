@@ -1,7 +1,7 @@
 {
-  "name": "iotarouter",
-  "version": "1.1.4",
-  "description": "Tiny router for React.",
+  "name": "@iotarouter/vite",
+  "version": "1.0.0",
+  "description": "Vite plugin for iotarouter route generation.",
   "type": "module",
   "main": "dist/main.js",
   "module": "dist/main.js",
@@ -9,15 +9,13 @@
   "files": [
     "dist"
   ],
-  "exclude": [
-    "vite"
-  ],
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.json"
   },
   "keywords": [
     "react",
-    "router"
+    "router",
+    "vite"
   ],
   "author": "septech",
   "license": "MIT",
@@ -28,6 +26,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "react": "^19.1.1"
+    "react": "^19.1.1",
+    "vite": "^7.1.2"
   }
 }
